@@ -1,0 +1,123 @@
+@import "font";
+@import "color";
+
+body{
+    .coinBg{
+        z-index: -1;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: 50% 50%;
+        filter: opacity(20%);
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: repeat(12,1fr);
+        i{margin: 0; width: 100%;}
+        i:first-child{
+            grid-column: 12/13;
+            grid-row: 1/2;
+            transform: scale(10);
+        }
+        i:nth-child(2){
+            grid-column: 11/12;
+            grid-row: 3/5;
+            transform: scale(3);
+        }
+        i:nth-child(3){
+            grid-column: 11/12;
+            grid-row: 7/8;
+            transform: scale(20);
+        }
+        i:nth-child(4){
+            grid-column: 3/4;
+            grid-row: 11/12;
+            transform: scale(5);
+        }
+        i:nth-child(5){
+            grid-column: 2/3;
+            grid-row: 10/11;
+            transform: scale(2);
+        }
+    }
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    overflow-x: hidden;
+    main{
+        display: grid;
+        grid-template-rows: repeat(12, 1fr);
+        h2, h3, h6{font-size: 1rem; font-family: "Press Start 2P", system-ui;}
+        .goodHR{
+            grid-row: 1/10;
+            grid-column: 1/2;
+            background-color: $mainGreen;
+            color: white;
+            border-radius: 0 0 5rem 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 70vh;
+            width: 80vw;
+        }
+        .contactInfo{
+            grid-row: 6/13;
+            grid-column: 1/2;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            div{
+                grid-column: 3/10;
+                grid-row: 1/2;
+                dl{
+                    display: grid;
+                    grid-template-columns: 10% 90%;
+                    align-items: center;
+                    dt{
+                        grid-column: 1/2;
+                        i.nes-phone{
+                            transform: scale(0.5);
+                        }
+                    }
+                    dd{
+                        grid-column: 2/3;
+                        padding:0 5% 0 5%;
+                        a{word-wrap: break-word; color: $mainGreen !important;}
+                        a.phone{
+                            font-size: 1.5rem;
+                            font-family: "Press Start 2P", system-ui;
+                        }
+                    }
+                }
+            }
+        }
+        svg{
+            position: fixed;
+            right: -100px;
+            bottom: -200px;
+        }
+    }
+    footer{
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.6rem;
+        a{&:hover{color: $mainGreen;}}
+        .icon-list{
+            display: flex;
+            justify-content: space-evenly;
+            i{
+                filter: grayscale(100%);
+                &:hover{
+                    transform-origin: 50% 50%;
+                    transform: scale(2.5);
+                    transition: 0.2s;
+                    filter: grayscale(0%);
+                }
+            }
+        }
+    }
+}

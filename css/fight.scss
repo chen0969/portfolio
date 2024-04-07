@@ -1,0 +1,216 @@
+@import "font";
+@import "color";
+
+// body, h1, h2, h3, section, ul, li, svg, div{
+//     border: solid 1px gray;
+// }
+
+// broccmon inter animations
+@mixin slideAnime($name, $origin){
+    @keyframes #{$name} {
+        from{transform: translateX($origin);}
+        to{transform: translateX(0px);}
+    }
+    animation: #{$name} 1s ease-in-out forwards;
+}
+
+// dialog
+dialog{
+    position: fixed;
+    top: 30%;
+    z-index: 5;
+}
+
+// background & transition
+@keyframes zoomIn {
+    from{transform: scale(0);}
+    to{transform: scale(1);}
+}
+@mixin ballsInAni($time){
+    transform-origin: 50% 50%;
+    animation: zoomIn $time forwards cubic-bezier(.2,.55,.24,1);
+}
+
+
+.fiBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    svg{
+        width: 100%;
+        height: 100%;
+        g{
+            circle{
+                filter: blur(2rem) saturate(3);
+                opacity: 0.2;
+            }
+        }
+        #fi-lGreen{@include ballsInAni(1s);}
+        #fi-red{@include ballsInAni(1s);}
+    }
+}
+
+// trinsition animation & elements
+@keyframes slide {
+    0%{transform: translateX(0vw);}
+    50%{transform: translateX(100vw);}
+    100%{transform: translateX(200vw);}
+}
+
+@keyframes slideUp {
+    0%{transform: translateX(100vw) translateY(100vh);}
+    50%{transform: translateX(100vw) translateY(0vh);}
+    70%{transform: translateX(100vw) translateY(0vh);}
+    100%{transform: translateX(100vw) translateY(-100vh);}
+}
+#broccoliSkillUse, #happyClient{
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    left: -100vw;
+    z-index: 3;
+    background-color: $mainGreen;
+}
+
+
+
+// default
+body{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+header, footer{
+    width: 100vw;
+    height: 8vh;
+    background-color: $fightGray;
+    color: white;
+    h1, h2{font-size: 1rem; margin: 0;}
+}
+
+main{height: 80vh;}
+
+// special
+.title{font-family: "Press Start 2P", system-ui;}
+main{
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    .broccmon{
+        @include slideAnime(broin,-1000px);
+        padding: 1rem;
+        height: 100%;
+        align-items: end;
+        grid-row: 5/13;
+        grid-column: 1/2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        .avatar{
+            position: relative;
+            top: 10rem;
+            grid-column: 1/2;
+            grid-row: 3/6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            div{
+                width: 20rem;
+                margin-right: 10%;
+                span{
+                    display: block;
+                    width: 100%;
+                    height: 0.3rem;
+                    background-color: $brightGreen;
+                    box-shadow: 0 0.1em $brightGreen, 0 -0.1em $brightGreen, 0.2em 0 $brightGreen, -0.2em 0 $brightGreen;
+                }
+            }
+            svg{
+                margin-left: 20%;
+            }
+        }
+        .status{
+            grid-column: 2/3;
+            grid-row: 3/6;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            .title{
+                width: fit-content;
+                font-size: 1.5rem;
+            }
+            .is-error{
+                position: relative;
+                top: 2.5rem;
+                left: 4rem;
+                font-weight: 900;
+                font-size: 1.5rem
+            }
+            button{
+                @include bitcursor();
+                font-size: 0.8rem;
+            }
+        }
+    }
+    @keyframes wiggle {
+        from{transform: translateX(0px)}
+        to{transform: translateX(10px)}
+    }
+    .wiggle{
+        animation: wiggle 0.1s 3 alternate backwards linear;
+    }
+    .enemy{
+        @include slideAnime(enemyin,1000px);
+        align-items: center;
+        justify-items: center;
+        grid-row: 1/6;
+        grid-column: 1/2;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        .status{
+            grid-row: 1/3;
+            grid-column: 4/7;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            h5, h6{font-family: "Press Start 2P", system-ui;}
+            span{
+                display: block;
+                width: 100%;
+                height: 0.3rem;
+                background-color: $brightGreen;
+                box-shadow: 0 0.1em $brightGreen, 0 -0.1em $brightGreen, 0.2em 0 $brightGreen, -0.2em 0 $brightGreen;
+            }
+        }
+        @keyframes clientMove {
+            from{transform: scaleY(1);}
+            to{transform: scaleY(1.1);}
+        }
+        svg{
+            grid-row: 2/4;
+            grid-column: 6/9;
+            transform-origin: 50% 100%;
+            animation: clientMove 1s alternate 50 steps(2, end);
+        }
+
+    }
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    em{
+        letter-spacing: 0.2rem;
+        font-size: 0.8rem;
+        font-family: "Press Start 2P", system-ui;
+    }
+}

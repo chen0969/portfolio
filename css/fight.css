@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+h1, h2, button {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p, a, em, strong, i {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.2rem;
+}
+
+a {
+  color: #4C82F5;
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  font-family: "Press Start 2P", system-ui;
+  letter-spacing: normal;
+  color: #B6E3B4;
+}
+
+dialog {
+  position: fixed;
+  top: 30%;
+  z-index: 5;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.fiBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+.fiBg svg {
+  width: 100%;
+  height: 100%;
+}
+.fiBg svg g circle {
+  filter: blur(2rem) saturate(3);
+  opacity: 0.2;
+}
+.fiBg svg #fi-lGreen {
+  transform-origin: 50% 50%;
+  animation: zoomIn 1s forwards cubic-bezier(0.2, 0.55, 0.24, 1);
+}
+.fiBg svg #fi-red {
+  transform-origin: 50% 50%;
+  animation: zoomIn 1s forwards cubic-bezier(0.2, 0.55, 0.24, 1);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0vw);
+  }
+  50% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(200vw);
+  }
+}
+@keyframes slideUp {
+  0% {
+    transform: translateX(100vw) translateY(100vh);
+  }
+  50% {
+    transform: translateX(100vw) translateY(0vh);
+  }
+  70% {
+    transform: translateX(100vw) translateY(0vh);
+  }
+  100% {
+    transform: translateX(100vw) translateY(-100vh);
+  }
+}
+#broccoliSkillUse, #happyClient {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  left: -100vw;
+  z-index: 3;
+  background-color: #295A32;
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+header, footer {
+  width: 100vw;
+  height: 8vh;
+  background-color: #3c3e46;
+  color: white;
+}
+header h1, header h2, footer h1, footer h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+main {
+  height: 80vh;
+}
+
+.title {
+  font-family: "Press Start 2P", system-ui;
+}
+
+main {
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+}
+main .broccmon {
+  animation: broin 1s ease-in-out forwards;
+  padding: 1rem;
+  height: 100%;
+  align-items: end;
+  grid-row: 5/13;
+  grid-column: 1/2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+@keyframes broin {
+  from {
+    transform: translateX(-1000px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+main .broccmon .avatar {
+  position: relative;
+  top: 10rem;
+  grid-column: 1/2;
+  grid-row: 3/6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .broccmon .avatar div {
+  width: 20rem;
+  margin-right: 10%;
+}
+main .broccmon .avatar div span {
+  display: block;
+  width: 100%;
+  height: 0.3rem;
+  background-color: #3ee135;
+  box-shadow: 0 0.1em #3ee135, 0 -0.1em #3ee135, 0.2em 0 #3ee135, -0.2em 0 #3ee135;
+}
+main .broccmon .avatar svg {
+  margin-left: 20%;
+}
+main .broccmon .status {
+  grid-column: 2/3;
+  grid-row: 3/6;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+main .broccmon .status .title {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.5rem;
+}
+main .broccmon .status .is-error {
+  position: relative;
+  top: 2.5rem;
+  left: 4rem;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+main .broccmon .status button {
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer !important;
+  font-size: 0.8rem;
+}
+@keyframes wiggle {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+main .wiggle {
+  animation: wiggle 0.1s 3 alternate backwards linear;
+}
+main .enemy {
+  animation: enemyin 1s ease-in-out forwards;
+  align-items: center;
+  justify-items: center;
+  grid-row: 1/6;
+  grid-column: 1/2;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+@keyframes enemyin {
+  from {
+    transform: translateX(1000px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+main .enemy .status {
+  grid-row: 1/3;
+  grid-column: 4/7;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+main .enemy .status h5, main .enemy .status h6 {
+  font-family: "Press Start 2P", system-ui;
+}
+main .enemy .status span {
+  display: block;
+  width: 100%;
+  height: 0.3rem;
+  background-color: #3ee135;
+  box-shadow: 0 0.1em #3ee135, 0 -0.1em #3ee135, 0.2em 0 #3ee135, -0.2em 0 #3ee135;
+}
+@keyframes clientMove {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(1.1);
+  }
+}
+main .enemy svg {
+  grid-row: 2/4;
+  grid-column: 6/9;
+  transform-origin: 50% 100%;
+  animation: clientMove 1s alternate 50 steps(2, end);
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+footer em {
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  font-family: "Press Start 2P", system-ui;
+}/*# sourceMappingURL=fight.css.map */

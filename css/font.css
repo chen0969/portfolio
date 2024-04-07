@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+h1, h2, button {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p, a, em, strong, i {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.2rem;
+}
+
+a {
+  color: #4C82F5;
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  font-family: "Press Start 2P", system-ui;
+  letter-spacing: normal;
+  color: #B6E3B4;
+}/*# sourceMappingURL=font.css.map */

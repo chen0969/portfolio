@@ -1,0 +1,242 @@
+@import "font";
+@import "color";
+// for debug
+// body, h1, h2, h3, section, ul, li, svg{
+//     border: solid 1px gray;
+// }
+
+// broccmon Card Background
+@keyframes zoomIn {
+    from{transform: scale(0);}
+    to{transform: scale(1);}
+}
+@mixin ballsInAni($time){
+    transform-origin: 50% 50%;
+    animation: zoomIn $time forwards cubic-bezier(.2,.55,.24,1);
+}
+.bmCardBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    svg{
+        width: 100%;
+        height: 100%;
+        g{
+            circle{
+                filter: blur(1rem) saturate(10);
+                opacity: 0.1;
+            }
+        }
+        #bm-lGreen{@include ballsInAni(4s);}
+        #bm-blue{@include ballsInAni(1s);}
+        #bm-yellow{@include ballsInAni(1s);}
+    }
+}
+
+// client debut styles
+:root{
+    // --animate-duration: 0.5s;
+    --animate-delay: 0.3s;
+}
+#debut{
+    display: none;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    left: 0;
+    top: 0;
+}
+
+// fonts
+h1, h2, h3, h4, h5, p{color: $mainBackground-Dark;}
+
+
+// animation
+@keyframes scrollAvatarIn {
+    0%{position: inherit; top: inherit; right: inherit;}
+    100%{position: fixed; top: 30vh; right: 20px;}
+}
+.goScrollAvatar{
+    animation: scrollAvatarIn 0.5s both ease-in-out;
+}
+
+@keyframes broLoop {
+    from{transform: scaleY(0.95);}
+    to{transform: scaleY(1);}
+}
+@mixin broLoop(){
+    transform-origin: 50% 50%;
+    animation: broLoop 0.5s 0.1s alternate 50 both steps(4, end);
+    
+}
+
+// default
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    p{font-family:"Press Start 2P", system-ui;}
+    h1{
+        font-size: 1.5rem;
+    }
+}
+
+main{
+    // section default setting
+    section{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        overflow: hidden;
+        height: 100%;
+        ul{
+            height: 50vh;
+            overflow: scroll;
+            li{
+                list-style: none;
+                font-size: 2rem;
+                margin-top: 10%;
+                margin-bottom: 10%;
+            }
+        }
+    }
+
+    // broccmon
+    .broccmonCard{
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: repeat(2, auto);
+        h2{grid-row: 1/2; grid-column: 1/6; text-align: start;}
+        #skillBox{
+            box-shadow: 10px 10px 20px $lightGreen;
+            border-radius: 2rem;
+            margin: 1rem;
+            grid-row: 2/3; grid-column: 1/4;
+            display: flex;
+            justify-content: end;
+            #skillList{
+                width: 40vw;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                    li{
+                        transition: 0.3s;
+                        font-size: 0.8rem;
+                        cursor: pointer;
+                        letter-spacing: 0.3rem;
+                    }
+                .activate{
+                    letter-spacing: 0.1rem;
+                    font-size: 1.5rem;
+                    color: $mainBackground-white;
+                    font-family: "Press Start 2P", system-ui;
+                    transform: translateX(10%);
+                    background-color: $mainGreen;
+                    padding: 2%;
+                }
+            }
+        }
+        .broccmonAvatar{
+            width: 30vw;
+            height: 65vh;
+            grid-row: 2/3; grid-column: 4/6;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: end;
+            h3{font-size: 1.2rem; font-family: "Lexend", sans-serif;}
+        }
+    }
+
+    // summary
+    #summarySection{
+        margin-top: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        gap: 3%;
+        section{
+            transition: 0.5s;
+            button{
+                font-family: "Press Start 2P", system-ui;
+                @include bitcursor();
+            }
+            dialog{
+                img{width: 80%;}
+            }
+        }
+    }
+
+    h5{
+        width: 100%;
+        text-align: center;
+    }
+
+    // see more
+
+    // experience
+    .experienceSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        .nes-container{
+            height: 100vh;
+            width: 75vw;
+            margin-top: 10%;
+            h3.title{
+                font-size: 2rem;
+                text-align: center;
+                font-family: "Press Start 2P", system-ui;
+                padding: 2%;
+            }
+            .images{
+                z-index: -1;
+                width: 100%;
+                transform-origin: 50% 50%;
+                filter: blur(10px);
+                opacity: 0;
+                transform: scale(0);
+                transition: 0.5s;
+                img{
+                    @include bitcursor();
+                    transition: 0.3s;
+                    width: 100%;
+                }
+            }
+            &:hover{
+                .images{
+                    transform: scale(1); filter: blur(0px); opacity: 0.7;
+                }
+            }
+        }
+    }
+}
+
+// access
+footer{
+    button{
+        cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer !important;
+        font-family: "Press Start 2P", system-ui;
+    }
+    .back{
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        font-size: 0.5rem;
+    }
+    .next{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+
+
+

@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+h1, h2, button {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p, a, em, strong, i {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.2rem;
+}
+
+a {
+  color: #4C82F5;
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  font-family: "Press Start 2P", system-ui;
+  letter-spacing: normal;
+  color: #B6E3B4;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  overflow-x: hidden;
+}
+body .coinBg {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 50%;
+  filter: opacity(20%);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+body .coinBg i {
+  margin: 0;
+  width: 100%;
+}
+body .coinBg i:first-child {
+  grid-column: 12/13;
+  grid-row: 1/2;
+  transform: scale(10);
+}
+body .coinBg i:nth-child(2) {
+  grid-column: 11/12;
+  grid-row: 3/5;
+  transform: scale(3);
+}
+body .coinBg i:nth-child(3) {
+  grid-column: 11/12;
+  grid-row: 7/8;
+  transform: scale(20);
+}
+body .coinBg i:nth-child(4) {
+  grid-column: 3/4;
+  grid-row: 11/12;
+  transform: scale(5);
+}
+body .coinBg i:nth-child(5) {
+  grid-column: 2/3;
+  grid-row: 10/11;
+  transform: scale(2);
+}
+body main {
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+}
+body main h2, body main h3, body main h6 {
+  font-size: 1rem;
+  font-family: "Press Start 2P", system-ui;
+}
+body main .goodHR {
+  grid-row: 1/10;
+  grid-column: 1/2;
+  background-color: #295A32;
+  color: white;
+  border-radius: 0 0 5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  width: 80vw;
+}
+body main .contactInfo {
+  grid-row: 6/13;
+  grid-column: 1/2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+body main .contactInfo div {
+  grid-column: 3/10;
+  grid-row: 1/2;
+}
+body main .contactInfo div dl {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  align-items: center;
+}
+body main .contactInfo div dl dt {
+  grid-column: 1/2;
+}
+body main .contactInfo div dl dt i.nes-phone {
+  transform: scale(0.5);
+}
+body main .contactInfo div dl dd {
+  grid-column: 2/3;
+  padding: 0 5% 0 5%;
+}
+body main .contactInfo div dl dd a {
+  word-wrap: break-word;
+  color: #295A32 !important;
+}
+body main .contactInfo div dl dd a.phone {
+  font-size: 1.5rem;
+  font-family: "Press Start 2P", system-ui;
+}
+body main svg {
+  position: fixed;
+  right: -100px;
+  bottom: -200px;
+}
+body footer {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6rem;
+}
+body footer a:hover {
+  color: #295A32;
+}
+body footer .icon-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+body footer .icon-list i {
+  filter: grayscale(100%);
+}
+body footer .icon-list i:hover {
+  transform-origin: 50% 50%;
+  transform: scale(2.5);
+  transition: 0.2s;
+  filter: grayscale(0%);
+}/*# sourceMappingURL=win.css.map */

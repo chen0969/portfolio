@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>designer</title>
+    <!-- NES library -->
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet">
+    <!-- animate library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- bootstrap library -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- my code -->
+    <link rel="stylesheet" href="css/bm-cards.css">
+</head>
+
+<body class="container p-1">
+    <!-- svg background -->
+    <div class="bmCardBg">
+        <svg viewBox="0 0 1920 1080">
+            <g id="bm-lGreen">
+                <circle fill="#49A44C" cx="50%" cy="50%" r="300" />
+            </g>
+            <g id="bm-blue">
+                <circle fill="#4C82F5" cx="-15%" cy="50%" r="200" />
+            </g>
+            <g id="bm-yellow">
+                <circle fill="#F2FFA3" cx="110%" cy="50%" r="500" />
+            </g>
+        </svg>
+    </div>
+    <!-- client debut -->
+    <div id="debut"></div>
+    <header class="nes-container with-title is-rounded animate__animated animate__fadeIn animate__delay-1s">
+        <p class="title">YOU CHOSE:</p>
+        <h1>Designer Jing-An</h1>
+    </header>
+    <main class="animate__animated animate__fadeIn animate__delay-1s">
+        <!-- broccoli card -->
+        <section class="broccmonCard mt-3 mb-3">
+            <h2 class="m-1">What Designer Jing-An can do?</h2>
+            <div id="skillBox">
+                <ul id="skillList" onscroll="revolver()">
+                    <li class="skillTag activate" onmouseover="skillShow(1)"><a href="#experience1">Sketching</a></li>
+                    <li class="skillTag" onmouseover="skillShow(2)"><a href="#experience1">Ideation</a></li>
+                    <li class="skillTag" onmouseover="skillShow(3)"><a href="#experience4">Modeling</a></li>
+                    <li class="skillTag" onmouseover="skillShow(4)"><a href="#experience4">Rendering</a></li>
+                    <li class="skillTag" onmouseover="skillShow(5)"><a href="#experience4">Prototyping</a></li>
+                    <li class="skillTag" onmouseover="skillShow(6)"><a href="#experience4">Ergonomics</a></li>
+                    <li class="skillTag" onmouseover="skillShow(7)"><a href="#experience3">UI/UX</a></li>
+                    <li class="skillTag" onmouseover="skillShow(8)"><a href="#experience4">Materials</a></li>
+                    <li class="skillTag" onmouseover="skillShow(9)"><a href="#experience2">Design Thinking</a></li>
+                    <li class="skillTag" onmouseover="skillShow(10)"><a href="#experience1">Visual Design</a></li>
+                    <li class="skillTag" onmouseover="skillShow(11)"><a href="#experience2">Collaboration</a></li>
+                    <li class="skillTag" onmouseover="skillShow(12)"><a href="#experience2">Trend Analysis</a></li>
+                    <li class="skillTag" onmouseover="skillShow(13)"><a href="#experience3">Problem Solving</a></li>
+                    <li class="skillTag" onmouseover="skillShow(14)"><a href="#experience2">Project Managing</a></li>
+                    <li class="skillTag" onmouseover="skillShow(15)"><a href="#experience4">TRIZ</a></li>
+                    <li class="skillTag" onmouseover="skillShow(16)"><a href="#experience3">SCAMPER</a></li>
+                    <li class="skillTag" onmouseover="skillShow(17)"><a href="#experience1">Brainstorming</a></li>
+                    <li class="skillTag" onmouseover="skillShow(18)"><a href="#experience3">User Journey Map</a></li>
+                    <li class="skillTag" onmouseover="skillShow(19)"><a href="#experience3">Persona</a></li>
+                    <li class="skillTag" onmouseover="skillShow(20)"><a href="#experience3">Mood Board</a></li>
+                    <li class="skillTag" onmouseover="skillShow(21)"><a href="#experience2">Tree Analysis</a></li>
+                    <li class="skillTag" onmouseover="skillShow(22)"><a href="#experience4">QFD</a></li>
+                </ul>
+            </div>
+            <div class="broccmonAvatar">
+                <h3 class="nes-balloon from-right nes-pointer" id="skillInfo">Sketching is an essential skill for
+                    designers to enhance their aesthetics and articulate their designs non-verbally.</h3>
+                <svg id="scrollAvatar" width="200" height="200" viewBox="0 0 300 300">
+                    <!-- see vueBroccmons.js -->
+                    <g class="hifiDes"></g>
+                </svg>
+            </div>
+        </section>
+        <!-- brif summary -->
+        <div id="summarySection">
+            <section>
+                <button type="button" class="nes-btn" onclick="document.getElementById('desDia').showModal();">
+                    DESIGNER
+                </button>
+                <dialog class="nes-dialog is-rounded" id="desDia">
+                    <form method="dialog" class="d-flex flex-column align-items-center">
+                        <div>
+                            <h4 class="title">Designer Jing-An</h4>
+                            <p>Go see designer Jing-An section</p>
+                            <img src="media/portfolio-design-sketch-01.jpg">
+                        </div>
+                        <div class="w-100 d-flex justify-content-between">
+                            <button class="nes-btn">Back</button>
+                            <button class="nes-btn is-primary" onclick="desPage()">See Designer</button>
+                        </div>
+                    </form>
+                </dialog>
+            </section>
+            <section>
+                <button type="button" class="nes-btn" onclick="document.getElementById('devDia').showModal();">
+                    DEVELOPER
+                </button>
+                <dialog class="nes-dialog is-rounded" id="devDia">
+                    <form method="dialog" class="d-flex flex-column align-items-center">
+                        <div>
+                            <h4 class="title">Developer Jing-An</h4>
+                            <p>Go see developer Jing-An section</p>
+                            <img src="media/portfolio-design-sketch-01.jpg">
+                        </div>
+                        <div class="w-100 d-flex justify-content-between">
+                            <button class="nes-btn">Back</button>
+                            <button class="nes-btn is-primary" onclick="devPage()">See Designer</button>
+                        </div>
+                    </form>
+                </dialog>
+            </section>
+            <section>
+                <button type="button" class="nes-btn" onclick="document.getElementById('phoDia').showModal();">
+                    PHOTOGRAPHER
+                </button>
+                <dialog class="nes-dialog is-rounded" id="phoDia">
+                    <form method="dialog" class="d-flex flex-column align-items-center">
+                        <div>
+                            <h4 class="title">Photographer Jing-An</h4>
+                            <p>Go see photographer Jing-An section</p>
+                            <img src="media/portfolio-design-sketch-01.jpg">
+                        </div>
+                        <div class="w-100 d-flex justify-content-between">
+                            <button class="nes-btn">Back</button>
+                            <button class="nes-btn is-primary" onclick="phoPage()">See Designer</button>
+                        </div>
+                    </form>
+                </dialog>
+            </section>
+        </div>
+        <!-- experience -->
+        <section class="experienceSection mt-3">
+            <!-- experience cards -->
+            <div class="nes-container with-title is-rounded" id="experience1">
+                <h3 class="title">DESIGN SKETCH</h3>
+                <h4><em>RELATIVE SKILLS:</em><br> Sketch, Ideation, Visual Design, Brainstorm.</h4>
+                <p>While sketches may seem insignificant in large design projects, they remain the most precise, rapid,
+                    and realistic method for designers to articulate their ideas, even compared to AI (Artificial
+                    Intelligence). Thanks to classical Bauhaus design training, Jing-An consistently utilizes sketches
+                    to express innovative design ideas and aesthetics.</p>
+                <div class="images row justify-content-center">
+                    <picture class="col-3">
+                        <source media="(min-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(min-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(min-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(min-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(min-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(min-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                </div>
+            </div>
+            <!-- experience cards -->
+            <div class="nes-container with-title is-rounded" id="experience2">
+                <h3 class="title">DESIGN MANAGER</h3>
+                <h4><em>RELATIVE SKILLS:</em><br> Design Thinking, Collaboration, Trend Analysis, Project Managing, Tree
+                    Analysis.</h4>
+                <p>Design is a collaborative endeavor that thrives on communication. In team settings, effective
+                    leadership is essential to prevent chaos. Jing-An has extensive experience as a design manager at
+                    Match19, a Taiwanese digital marketing firm, leading teams of over six individuals. He excels at
+                    fostering collaboration among colleagues, facilitating meetings, assisting coworkers in
+                    problem-solving, and managing multiple projects to ensure timely completion. </p>
+                <div class="images row justify-content-center">
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                </div>
+            </div>
+            <!-- experience cards -->
+            <div class="nes-container with-title is-rounded" id="experience3">
+                <h3 class="title">START-UP CONSULTANT</h3>
+                <h4><em>RELATIVE SKILLS:</em><br> UI/UX, Problem Solving, SCAMPER, User Journey Map, Persona, Mood
+                    Board.</h4>
+                <p>Due to fate and Jing-An's inclination, he frequently assists startup companies. With his broad
+                    knowledge, Jing-An can fulfill various roles within these startups. Through this support, Jing-An
+                    continuously learns from diverse fields. To date, Jing-An has helped launch over 10 startup careers
+                    under optimal conditions. Many of them remain in touch with Jing-An, eagerly anticipating future
+                    collaborations. </p>
+                <div class="images row justify-content-center">
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                </div>
+            </div>
+            <!-- experience cards -->
+            <div class="nes-container with-title is-rounded" id="experience4">
+                <h3 class="title">INDUSTRIAL EXPERIENCE</h3>
+                <h4><em>RELATIVE SKILLS:</em><br> Modeling, Rendering, Prototyping, Ergonomics, Materials, TRIZ, QFD.
+                </h4>
+                <p>As an industrial designer, Jing-An has acquired extensive knowledge of the production process across
+                    various materials. He is familiar with high-tech post-production skills, architectural concepts, and
+                    ergonomics. Additionally, Jing-An has established connections with factories in diverse fields.
+                    Continuously driven to expand his expertise, Jing-An diligently pursues new knowledge every day,
+                    striving to learn as quickly as possible. He has developed into a rapid learner, capable of
+                    mastering new skills within just one week.</p>
+                <div class="images row justify-content-center">
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="animate__animated animate__fadeIn animate__delay-1s">
+        <button class="nes-btn is-rounded back" onclick="backHome()">Go Back</button>
+        <button class="nes-btn is-success is-rounded next" onclick="clientDebut()">I want this Jing-An!</button>
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <!-- bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+        <!-- vue -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <!-- broccoli code -->
+        <script src="js/vueBroccmon.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/route.js"></script>
+    </footer>
+</body>
+
+</html>

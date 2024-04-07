@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographer</title>
+    <!-- NES library -->
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet">
+    <!-- animate library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- bootstrap library -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- my code -->
+    <link rel="stylesheet" href="css/bm-cards.css">
+</head>
+
+<body class="container p-1">
+    <!-- svg background -->
+    <div class="bmCardBg">
+        <svg viewBox="0 0 1920 1080">
+            <g id="bm-lGreen">
+                <circle fill="#49A44C" cx="50%" cy="50%" r="300" />
+            </g>
+            <g id="bm-blue">
+                <circle fill="#4C82F5" cx="-15%" cy="50%" r="200" />
+            </g>
+            <g id="bm-yellow">
+                <circle fill="#F2FFA3" cx="110%" cy="50%" r="500" />
+            </g>
+        </svg>
+    </div>
+    <!-- client debut -->
+    <div id="debut"></div>
+    <header class="nes-container with-title is-rounded animate__animated animate__fadeIn animate__delay-1s">
+        <p class="title">YOU CHOSE:</p>
+        <h1>Photographer Jing-An</h1>
+    </header>
+    <main class="animate__animated animate__fadeIn animate__delay-1s">
+        <!-- broccoli card -->
+        <section class="broccmonCard mt-3 mb-3">
+            <h2 class="m-1">What Photographer Jing-An can do?</h2>
+            <div id="skillBox">
+                <ul id="skillList" onscroll="revolver()"> 
+
+                    <li class="skillTag activate" onmouseover="phoSkillShow(1)"><a href="#experience1">Photography</a></li> 
+                    
+                    <li class="skillTag" onmouseover="phoSkillShow(2)"><a href="#experience1">Lighting</a></li> 
+                    
+                    <li class="skillTag" onmouseover="phoSkillShow(3)"><a href="#experience1">Composition</a></li> 
+                    
+                    <li class="skillTag" onmouseover="phoSkillShow(4)"><a href="#experience1">Color Theory</a></li> 
+                    
+                    <li class="skillTag" onmouseover="phoSkillShow(5)"><a href="#experience2">Portrait</a></li> 
+                    
+                    <li class="skillTag" onmouseover="phoSkillShow(6)"><a href="#experience1">Commercial</a></li> 
+                    
+                    <li class="skillTag" onmouseover="phoSkillShow(7)"><a href="#experience2">Post-Production</a></li> 
+                    
+                    <li class="skillTag" onmouseover="phoSkillShow(8)"><a href="#experience3">Animation</a></li> 
+                    
+                    <li class="skillTag" onmouseover="phoSkillShow(9)"><a href="#experience2">Adobe Software</a></li>
+                    
+                    <li class="skillTag" onmouseover="phoSkillShow(10)"><a href="#experience3">Blender</a></li>  
+                    
+                    <li class="skillTag" onmouseover="phoSkillShow(11)"><a href="#experience3">Autodesk Software</a></li> 
+                    
+                    <li class="skillTag" onmouseover="phoSkillShow(12)"><a href="#experience3">SolidWorks</a></li> 
+                    
+                    <li class="skillTag" onmouseover="phoSkillShow(13)"><a href="#experience3">Story Board</a></li>
+                    
+                </ul> 
+            </div>
+            <div class="broccmonAvatar">
+                <h3 class="nes-balloon from-right nes-pointer" id="skillInfo">Jing-An honed his photography skills by challenging himself to capture the beauty in everyday trash. Now, he has the ability to make anything look like treasure. </h3>
+                <svg id="scrollAvatar" width="200" height="200" viewBox="0 0 300 300">
+                    <!-- see vueBroccmons.js -->
+                    <g class="hifiPho"></g>
+                </svg>
+            </div>
+        </section>
+        <!-- brif summary -->
+        <div id="summarySection">
+            <section>
+                <button type="button" class="nes-btn" onclick="document.getElementById('desDia').showModal();">
+                    DESIGNER
+                </button>
+                <dialog class="nes-dialog is-rounded" id="desDia">
+                    <form method="dialog" class="d-flex flex-column align-items-center">
+                        <div>
+                            <h4 class="title">Designer Jing-An</h4>
+                            <p>Go see designer Jing-An section</p>
+                            <img src="media/portfolio-design-sketch-01.jpg">
+                        </div>
+                        <div class="w-100 d-flex justify-content-between">
+                            <button class="nes-btn">Back</button>
+                            <button class="nes-btn is-primary" onclick="desPage()">See Designer</button>
+                        </div>
+                    </form>
+                </dialog>
+            </section>
+            <section>
+                <button type="button" class="nes-btn" onclick="document.getElementById('devDia').showModal();">
+                    DEVELOPER
+                </button>
+                <dialog class="nes-dialog is-rounded" id="devDia">
+                    <form method="dialog" class="d-flex flex-column align-items-center">
+                        <div>
+                            <h4 class="title">Developer Jing-An</h4>
+                            <p>Go see developer Jing-An section</p>
+                            <img src="media/portfolio-design-sketch-01.jpg">
+                        </div>
+                        <div class="w-100 d-flex justify-content-between">
+                            <button class="nes-btn">Back</button>
+                            <button class="nes-btn is-primary" onclick="devPage()">See Designer</button>
+                        </div>
+                    </form>
+                </dialog>
+            </section>
+            <section>
+                <button type="button" class="nes-btn" onclick="document.getElementById('phoDia').showModal();">
+                    PHOTOGRAPHER
+                </button>
+                <dialog class="nes-dialog is-rounded" id="phoDia">
+                    <form method="dialog" class="d-flex flex-column align-items-center">
+                        <div>
+                            <h4 class="title">Photographer Jing-An</h4>
+                            <p>Go see photographer Jing-An section</p>
+                            <img src="media/portfolio-design-sketch-01.jpg">
+                        </div>
+                        <div class="w-100 d-flex justify-content-between">
+                            <button class="nes-btn">Back</button>
+                            <button class="nes-btn is-primary" onclick="phoPage()">See Designer</button>
+                        </div>
+                    </form>
+                </dialog>
+            </section>
+        </div>
+        <!-- experience -->
+        <section class="experienceSection mt-3">
+            <!-- experience cards -->
+            <div class="nes-container with-title is-rounded" id="experience1">
+                <h3 class="title">COMMERICAL MAGICIAN</h3>
+                <h4><em>RELATIVE SKILLS:</em><br> Photography, Lighting, Composition, Color Theory, Commercial.</h4>
+                <p>Little did they know, Jing-An's first job was as a commercial photographer and social media manager for a disposable tableware firm called JFY Retailer. Despite limited resources—a cheap smartphone and basic tools—he transformed ordinary tableware into captivating commercial photos, marketing materials, and social media posts. Jing-An's success was undeniable! Today, he effortlessly creates stunning photos for any subject and continues to serve JFY Retailer as their contracted photographer. </p>
+                <div class="images row justify-content-center">
+                    <picture class="col-3">
+                        <source media="(min-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(min-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(min-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(min-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(min-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(min-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                </div>
+            </div>
+            <!-- experience cards -->
+            <div class="nes-container with-title is-rounded" id="experience2">
+                <h3 class="title">PHOTOS FOR SOCIETY</h3>
+                <h4><em>RELATIVE SKILLS:</em><br>Portrait, Post-Production, Adobe Software.</h4>
+                <p>Today, Jing-An is a successful photographer, capturing commercial photos for various firms such as Capital E, a Taiwanese bag retailer. Additionally, he volunteers as a photographer at Algonquin College, creating numerous photos and albums for various events. Jing-An also manages the Instagram account Ottawa Free Photos, offering free photo services for tourists in Ottawa.</p>
+                <div class="images row justify-content-center">
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                </div>
+            </div>
+            <!-- experience cards -->
+            <div class="nes-container with-title is-rounded" id="experience3">
+                <h3 class="title">ANIMATED BY CINEMA</h3>
+                <h4><em>RELATIVE SKILLS:</em><br>Animation, Blender, Autodesk Software, SolidWorks, Story Board.</h4>
+                <p>Jing-An's passion for cinema was ignited by his director aunt. He previously worked at an award-winning film firm in Taiwan called Green Film Production, where he contributed to various aspects of movie production, including artistic design, advertising, poster design, filming, and post-production. Jing-An harbors a personal dream of creating his own animated movie and has already produced numerous commercial animations for himself and various firms.</p>
+                <div class="images row justify-content-center">
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                    <picture class="col-3">
+                        <source media="(max-width: 650px)" srcset="media/portfolio-design-sketch-03.jpg">
+                        <source media="(max-width: 465px)" srcset="media/portfolio-design-sketch-02.jpg">
+                        <img onmouseover="showExample(this)" onmouseleave="hideExample(this)"
+                            src="media/portfolio-design-sketch-01.jpg" alt="">
+                    </picture>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="animate__animated animate__fadeIn animate__delay-1s">
+        <button class="nes-btn is-rounded back" onclick="backHome()">Go Back</button>
+        <button class="nes-btn is-success is-rounded next" onclick="clientDebut()">I want this Jing-An!</button>
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <!-- bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+        <!-- vue -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <!-- broccoli code -->
+        <script src="js/vueBroccmon.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/route.js"></script>
+    </footer>
+</body>
+
+</html>
