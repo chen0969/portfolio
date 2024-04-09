@@ -5,6 +5,16 @@
 //     border: solid 1px gray;
 // }
 
+// skip btn
+a.skipBtn{
+    position: fixed;
+    top: -100px;
+    &:focus{
+        top: 0px;
+        z-index: 10;
+    }
+}
+
 // broccmon Card Background
 @keyframes zoomIn {
     from{transform: scale(0);}
@@ -14,6 +24,19 @@
     transform-origin: 50% 50%;
     animation: zoomIn $time forwards cubic-bezier(.2,.55,.24,1);
 }
+
+// dialog template
+@mixin dialogTemplate($media){
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255)), url($media);
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 40vw;
+        aspect-ratio: 3/4;
+        h4{font-family: "Press Start 2P", system-ui;}
+}
+
+
 .bmCardBg{
     position: fixed;
     top: 0;
@@ -166,8 +189,15 @@ main{
                 font-family: "Press Start 2P", system-ui;
                 @include bitcursor();
             }
-            dialog{
-                img{width: 80%;}
+            dialog.designer{
+                @include dialogTemplate('../media/me_3.jpg');
+            }
+            dialog.developer{
+                @include dialogTemplate('../media/me_1.jpg');
+            }
+            dialog.photographer{
+                h4{font-size: 1.1rem !important;}
+                @include dialogTemplate('../media/me_12.jpg');
             }
         }
     }
@@ -235,6 +265,14 @@ footer{
         bottom: 10px;
         right: 10px;
     }
+    label{
+        font-family: "Press Start 2P", system-ui;
+        font-size: 0.9rem;
+        position: fixed;
+        bottom: 10px;
+        color: $fightGray;
+    }
+
 }
 
 

@@ -53,7 +53,16 @@
                     <button class="skill nes-btn" onclick="attack()">Design</button>
                     <button class="skill nes-btn" onclick="attack()">Develop</button>
                     <button class="skill nes-btn" onclick="attack()">Photo</button>
-                    <button class="skill nes-btn" onclick="desPage()">Resume</button>
+                    <button class="skill nes-btn" onclick="document.getElementById('seeResume').showModal();">Resume</button>
+                    <dialog class="nes-dialog is-rounded" id="seeResume">
+                        <form method="dialog" class="d-flex flex-column align-items-center justify-content-center">
+                            <h5 class="title">Go back to see resumes?</h5>
+                            <div class="w-100 d-flex justify-content-end">
+                                <button class="nes-btn m-3">Cancel</button>
+                                <button class="nes-btn is-success m-3" onclick="desPage()">See Resume</button>
+                            </div>
+                        </form>
+                    </dialog>
                 </div>
                 <button class="nes-btn is-error is-rounded" onclick="win()">Ultimate Skill!</button>
            </div>

@@ -17,6 +17,7 @@
 </head>
 
 <body class="container p-1">
+    <a class="nes-btn skipBtn" href="#summarySection">SKIP</a>
     <!-- svg background -->
     <div class="bmCardBg">
         <svg viewBox="0 0 1920 1080">
@@ -103,17 +104,20 @@
                 <button type="button" class="nes-btn" onclick="document.getElementById('desDia').showModal();">
                     DESIGNER
                 </button>
-                <dialog class="nes-dialog is-rounded" id="desDia">
-                    <form method="dialog" class="d-flex flex-column align-items-center">
-                        <div>
-                            <h4 class="title">Designer Jing-An</h4>
-                            <p>Go see designer Jing-An section</p>
-                            <img src="media/portfolio-design-sketch-01.jpg">
+                <dialog class="designer nes-dialog is-rounded" id="desDia">
+                    <form method="dialog" class="h-100 d-flex flex-column align-items-end justify-content-end">
+                        <div class="d-flex flex-column align-items-end">
+                            <svg width="10rem" height="10rem" viewBox="0 0 300 300">
+                                <!-- see vueBroccmons.js -->
+                                <g class="hifiDes"></g>
+                            </svg>
                         </div>
-                        <div class="w-100 d-flex justify-content-between">
-                            <button class="nes-btn">Back</button>
-                            <button class="nes-btn is-primary" onclick="desPage()">See Designer</button>
+                        <div class="w-100 d-flex justify-content-end">
+                            <button class="nes-btn m-3">Back</button>
+                            <button class="nes-btn is-success m-3" onclick="desPage()">See Designer</button>
                         </div>
+                        <h4 class="title">Designer Jing-An</h4>
+                        <p>Go see designer Jing-An section</p>
                     </form>
                 </dialog>
             </section>
@@ -121,17 +125,20 @@
                 <button type="button" class="nes-btn" onclick="document.getElementById('devDia').showModal();">
                     DEVELOPER
                 </button>
-                <dialog class="nes-dialog is-rounded" id="devDia">
-                    <form method="dialog" class="d-flex flex-column align-items-center">
+                <dialog class="developer nes-dialog is-rounded" id="devDia">
+                    <form method="dialog" class="h-100 d-flex flex-column align-items-end justify-content-end">
                         <div>
-                            <h4 class="title">Developer Jing-An</h4>
-                            <p>Go see developer Jing-An section</p>
-                            <img src="media/portfolio-design-sketch-01.jpg">
+                            <svg width="10rem" height="10rem" viewBox="0 0 300 300">
+                                <!-- see vueBroccmons.js -->
+                                <g class="hifiDev"></g>
+                            </svg>
                         </div>
-                        <div class="w-100 d-flex justify-content-between">
-                            <button class="nes-btn">Back</button>
-                            <button class="nes-btn is-primary" onclick="devPage()">See Designer</button>
+                        <div class="w-100 d-flex justify-content-end">
+                            <button class="nes-btn m-3">Back</button>
+                            <button class="nes-btn is-primary m-3" onclick="devPage()">See Developer</button>
                         </div>
+                        <h4 class="title">Developer Jing-An</h4>
+                        <p>Go see developer Jing-An section</p>
                     </form>
                 </dialog>
             </section>
@@ -139,17 +146,20 @@
                 <button type="button" class="nes-btn" onclick="document.getElementById('phoDia').showModal();">
                     PHOTOGRAPHER
                 </button>
-                <dialog class="nes-dialog is-rounded" id="phoDia">
-                    <form method="dialog" class="d-flex flex-column align-items-center">
+                <dialog class="photographer nes-dialog is-rounded" id="phoDia">
+                    <form method="dialog" class="h-100 d-flex flex-column align-items-end justify-content-end">
                         <div>
-                            <h4 class="title">Photographer Jing-An</h4>
-                            <p>Go see photographer Jing-An section</p>
-                            <img src="media/portfolio-design-sketch-01.jpg">
+                            <svg width="10rem" height="10rem" viewBox="0 0 300 300">
+                                <!-- see vueBroccmons.js -->
+                                <g class="hifiPho"></g>
+                            </svg>
                         </div>
-                        <div class="w-100 d-flex justify-content-between">
-                            <button class="nes-btn">Back</button>
-                            <button class="nes-btn is-primary" onclick="phoPage()">See Designer</button>
+                        <div class="w-100 d-flex justify-content-end">
+                            <button class="nes-btn m-3">Back</button>
+                            <button class="nes-btn is-warning m-3" onclick="phoPage()">See Photographer</button>
                         </div>
+                        <h4 class="title">Photographer Jing-An</h4>
+                        <p>Go see photographer Jing-An section</p>
                     </form>
                 </dialog>
             </section>
@@ -236,8 +246,12 @@
             </div>
         </section>
     </main>
-    <footer class="animate__animated animate__fadeIn animate__delay-1s">
+    <footer class="animate__animated animate__fadeIn animate__delay-1s  d-flex flex-row justify-content-center">
         <button class="nes-btn is-rounded back" onclick="backHome()">Go Back</button>
+        <label>
+            <input type="radio" class="nes-radio" name="answer" checked />
+            <span>Scroll Down</span>
+        </label>
         <button class="nes-btn is-success is-rounded next" onclick="clientDebut()">I want this Jing-An!</button>
         <!-- jquery -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"

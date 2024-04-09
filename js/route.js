@@ -33,3 +33,17 @@ function phoPage(){
 function phoFight(){
     window.location.href = "photographer-fight.html"
 }
+
+// open social media link
+
+function openIG(){
+    window.open('https://www.instagram.com/huyohiya/');
+}
+
+function openLinkedIn(){
+    window.open('https://www.linkedin.com/in/broccolidesign');
+}
+
+function openWhatsApp(){
+    window.open('https://wa.me/13439884869');
+}
