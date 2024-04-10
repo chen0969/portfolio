@@ -32,6 +32,14 @@ body {
   justify-content: start;
   overflow-x: hidden;
 }
+body a.skipBtn {
+  position: fixed;
+  top: -100px;
+}
+body a.skipBtn:focus {
+  top: 0px;
+  z-index: 10;
+}
 body .coinBg {
   z-index: -1;
   position: fixed;

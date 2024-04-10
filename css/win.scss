@@ -1,7 +1,18 @@
 @import "font";
 @import "color";
 
+
+
 body{
+    // skip btn
+a.skipBtn{
+    position: fixed;
+    top: -100px;
+    &:focus{
+        top: 0px;
+        z-index: 10;
+    }
+}
     .coinBg{
         z-index: -1;
         position: fixed;

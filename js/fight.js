@@ -1,14 +1,24 @@
+var initialPoints;
+var newPoints;
 
+$(document).ready(function(){
+    initialPoints = $("#points").width();
+    console.log('intial', initialPoints);
+    newPoints = initialPoints / 2;
+    console.log('new', newPoints);
+});
 
 function attack(){
-    const points = $("#points").css("width");
-    if(points == "300px"){
+    const points = $("#points").width();
+    if(points >= initialPoints - 1 && points <= initialPoints + 1){
         useSkill();
         wiggle();
-    }else if(points == "150px"){
+    }else if(points >= newPoints - 1 && points <= newPoints + 1){
         useSkill();
         win();
     }
+    console.log('points', points);
+    // console.log('clicked!');
 }
 
 function useSkill(){
@@ -23,7 +33,7 @@ function wiggle(){
     $("#enemyStatus").css("animation", "none");
     setTimeout(function(){
         $("#enemyStatus").css("animation", "wiggle 0.1s 3 alternate backwards linear");
-        $("#points").css("width", "150px");
+        $("#points").css("width", newPoints + "px");
     }, 1500)
 }
 

@@ -25,6 +25,15 @@ a:hover {
   color: #B6E3B4;
 }
 
+a.skipBtn {
+  position: fixed;
+  top: -100px;
+}
+a.skipBtn:focus {
+  top: 0px;
+  z-index: 10;
+}
+
 @keyframes zoomIn {
   from {
     transform: scale(0);
