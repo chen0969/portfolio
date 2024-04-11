@@ -163,4 +163,64 @@ body footer .icon-list i:hover {
   transform: scale(2.5);
   transition: 0.2s;
   filter: grayscale(0%);
+}
+
+@media only screen and (max-width: 450px) {
+  .coinBg .coin {
+    display: none;
+  }
+  main {
+    display: flex !important;
+    flex-direction: column;
+  }
+  main .goodHR {
+    width: 90vw !important;
+    height: 30vh !important;
+  }
+  main .goodHR h1 {
+    font-size: 1rem;
+  }
+  main .goodHR h2 {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  main .goodHR .is-large {
+    transform: scale(1.5);
+    margin: 0.1rem;
+  }
+  main .contactInfo .nes-balloon {
+    padding: 5%;
+    grid-column: 1/13;
+  }
+  main .contactInfo .nes-balloon h2, main .contactInfo .nes-balloon h3, main .contactInfo .nes-balloon i, main .contactInfo .nes-balloon a {
+    font-size: 0.5rem;
+  }
+  main .contactInfo .nes-balloon dl dt .nes-phone {
+    transform: scale(0.3);
+  }
+  main .contactInfo .nes-balloon dl dd .phone {
+    font-size: 0.7rem;
+  }
+  #happyBroccoli {
+    width: 13rem;
+    height: 13rem;
+    right: -2rem;
+    bottom: -4rem;
+  }
+  .creatorList h6, .creatorList p {
+    font-size: 0.5rem;
+  }
+  footer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column-reverse !important;
+    align-items: start !important;
+    gap: 2rem;
+  }
+  footer div {
+    width: 40vw;
+  }
+  footer a {
+    width: 50vw;
+  }
 }/*# sourceMappingURL=win.css.map */

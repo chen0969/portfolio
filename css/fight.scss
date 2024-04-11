@@ -214,3 +214,56 @@ footer{
         font-family: "Press Start 2P", system-ui;
     }
 }
+
+// phone media
+@media only screen and (max-width: 450px) {
+    .fiBg{display: none;}
+    h1{font-size: 0.5rem !important;}
+    h2{font-size: 0.5rem !important; text-align: end;}
+    main p{font-size: 0.8rem; letter-spacing: 0.05rem;}
+    main{
+        overflow: hidden;
+        .broccmon{
+            width: 100vw;
+            .avatar{
+                grid-row: 1/3;
+                .nes-balloon{
+                    width: 30vw;
+                }
+                svg{
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+            .status{
+                .title, button{
+                    font-size: 0.7rem !important;
+                }
+                div button{
+                    font-size: 0.5rem !important;
+                    margin-bottom: 5%;
+                }
+                .is-error{
+                    width: max-content;
+                    left: 0;
+                }
+            }
+        }
+        .enemy{
+            #enemyStatus{
+                h5, h6{font-size: 0.9rem;}
+            }
+            #cliBit{
+                grid-row: 3/5;
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+        }
+    }
+    footer{
+        width: 100vw;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+}

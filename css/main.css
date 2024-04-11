@@ -320,4 +320,72 @@ body#all .experienceSection .nes-container.is-dark.with-title.is-rounded {
 body#all footer {
   position: fixed;
   bottom: 0;
+}
+
+@media only screen and (max-width: 450px) {
+  .frontBg {
+    display: none;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  main p {
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+  }
+  .broccmons {
+    overflow-x: scroll;
+    gap: 5%;
+  }
+  footer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  footer div {
+    width: 70vw;
+    margin: 10%;
+  }
+  body#all .frontBg {
+    display: none;
+  }
+  body#all h1 {
+    font-size: 1.2rem;
+  }
+  body#all h2 {
+    font-size: 0.5rem;
+    text-align: center;
+  }
+  body#all h6 {
+    font-size: 0.6rem;
+  }
+  body#all main p {
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+  }
+  body#all .broccmonLeft .with-title, body#all .broccmonRight .with-title {
+    grid-column: 1/12;
+  }
+  body#all .broccmonLeft svg, body#all .broccmonRight svg {
+    width: 6rem;
+    height: 6rem;
+  }
+  body#all .experienceSection .nes-container.is-dark.with-title.is-rounded {
+    height: -moz-max-content;
+    height: max-content;
+  }
+  body#all footer {
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  body#all footer div {
+    width: 70vw;
+    margin: 10%;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -277,4 +277,71 @@ footer{
 
 
 
+// phone media
+@media only screen and (max-width: 450px) {
+    .bmCardBg{display: none;}
+    h1{font-size: 2rem;}
+    h2{font-size: 0.7rem; text-align: center;}
+    main p{font-size: 0.8rem; letter-spacing: 0.05rem;}
+    main{
+        .broccmonCard{
+            display: flex;
+            flex-direction: column;
+            #skillBox{
+                margin: 0;
+                width: 100%;
+                justify-content: start;
+                #skillList{
+                    width: 100%;
+                }
+            }
+            .broccmonAvatar{
+                width: 100%;
+                height: fit-content;
+                justify-content: start;
+                #scrollAvatar{
+                    width: 6rem;
+                    height: 6rem;
+                    z-index: 3;
+                }
+            }
+        }
+        #summarySection{
+            section{
+                width: 33%;
+                button{font-size: 0.4rem;}
+                dialog{
+                    width: 100vw !important;
+                    height: 50vh;
+                    svg{
+                        width: 5rem;
+                        height: 5rem;
+                    }
+                }
+            }
+        }
+        .experienceSection{
+            div.nes-container{
+                height: 180vh;
+                .title{font-size: 1rem;}
+                .images{
+                    display: flex;
+                    flex-direction: column;
+                    opacity: 0.3;
+                    transform: scale(1);
+                    picture{width: 100%;}
+                }
+            }
 
+        }
+    }
+    footer{
+        width: 100vw;
+        display: flex;
+        flex-direction: column-reverse;
+        label{display: none;}
+        button{
+            font-size: 0.5rem;
+        }
+    }
+}

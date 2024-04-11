@@ -132,3 +132,54 @@ a.skipBtn{
         }
     }
 }
+
+
+// phone media
+@media only screen and (max-width: 450px) {
+    .coinBg .coin{display: none;}
+    main{
+        display: flex !important;
+        flex-direction: column;
+        .goodHR{
+            width: 90vw !important;
+            height: 30vh !important;
+            h1{font-size: 1rem;}
+            h2{font-size: 0.7rem; text-align: center;}
+            .is-large{
+                transform: scale(1.5);
+                margin: 0.1rem;
+            }
+        }
+        .contactInfo{
+            .nes-balloon{
+                padding: 5%;
+                h2, h3, i, a{font-size: 0.5rem;}
+                grid-column: 1/13;
+                dl{
+                    dt{.nes-phone{transform: scale(0.3);}}
+                    dd{.phone{font-size: 0.7rem;}}
+                }
+            }
+        }
+    }
+    #happyBroccoli{
+        width: 13rem;
+        height: 13rem;
+        right: -2rem;
+        bottom: -4rem;
+    }
+
+    .creatorList{
+        h6, p{font-size: 0.5rem;}
+    }
+
+    footer{
+        width: 100vw;
+        display: flex;
+        flex-direction: column-reverse !important;
+        align-items: start !important;
+        gap: 2rem;
+        div{width: 40vw;}
+        a{width: 50vw;}
+    }
+}

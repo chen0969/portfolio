@@ -266,3 +266,50 @@ body#all{
        bottom: 0;
     }
 }
+
+// phone media
+@media only screen and (max-width: 450px) {
+    .frontBg{display: none;}
+    h1{font-size: 2rem;}
+    h2{font-size: 0.7rem; text-align: center;}
+    main p{font-size: 0.8rem; letter-spacing: 0.05rem;}
+    .broccmons{
+        overflow-x: scroll;
+        gap: 5%;
+    }
+    footer{
+        width: 100vw;
+        display: flex;
+        flex-direction: column-reverse;
+        div{width: 70vw; margin: 10%;}
+    }
+
+    body#all{
+        .frontBg{display: none;}
+        h1{font-size: 1.2rem;}
+        h2{font-size: 0.5rem; text-align: center;}
+        h6{font-size: 0.6rem;}
+        main p{font-size: 0.8rem; letter-spacing: 0.05rem;}
+        .broccmonLeft, .broccmonRight{
+            .with-title{
+                grid-column: 1/12;
+            }
+            svg{
+                width: 6rem;
+                height: 6rem;
+            }
+        }
+        .experienceSection{
+            .nes-container.is-dark.with-title.is-rounded{
+                height: max-content;
+            }
+        }
+        footer{
+            position: fixed;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            div{width: 70vw; margin: 10%;}
+        }
+    }
+}
